@@ -11,7 +11,7 @@
       "id": 2,
       "descricao": "Estudar sobre acessibilidade",
       "categoria": "Trabalho",
-      "statusFinalizado": true,
+      "statusFinalizado": false,
       "prioridade": "Normal"
     },
     {
@@ -31,7 +31,7 @@
     {
       "id": 6,
       "descricao": "Ler",
-      "statusFinalizado": true,
+      "statusFinalizado": false,
       "categoria": "Estudos",
       "prioridade": "Alta"
     }

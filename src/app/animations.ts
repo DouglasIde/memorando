@@ -34,3 +34,11 @@ export const shownStateTrigger = trigger('shownState', [
         }))
     ])
 ])
+
+export const buttonStateTrigger = trigger('buttonState', [
+  transition(':enter', [
+    animate('400ms ease-in', style({
+      transform: 'scale(0.4)',
+    })),
+  ]),
+])
