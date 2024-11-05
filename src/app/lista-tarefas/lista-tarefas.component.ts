@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { TarefaService } from 'src/app/service/tarefa.service';
 import { Tarefa } from '../interface/tarefa';
-import { buttonStateTrigger, highlightedStateTrigger, shownStateTrigger } from '../animations';
+import { buttonStateTrigger, filterTrigger, highlightedStateTrigger, shownStateTrigger } from '../animations';
 
 @Component({
   selector: 'app-lista-tarefas',
@@ -12,7 +12,8 @@ import { buttonStateTrigger, highlightedStateTrigger, shownStateTrigger } from '
   styleUrls: ['./lista-tarefas.component.css'],
   animations: [highlightedStateTrigger,
     shownStateTrigger,
-    buttonStateTrigger
+    buttonStateTrigger,
+    filterTrigger
   ]
 })
 
