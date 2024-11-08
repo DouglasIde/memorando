@@ -56,3 +56,17 @@ export const filterTrigger = trigger('filterAnimation',[
     animate('400ms ease-out', style({opacity: 0, width: 0}))
   ])
 ])
+
+export const formButtonTrigger = trigger('formButton', [
+  transition('invalid => valid', [
+    animate(200, style({
+      backgroundColor: '#63B77C'
+    })),
+    animate(100, style({
+      transform: 'scale(1.1)'
+    })),
+    animate(200, style({
+      transform: 'scale(1)'
+    }))
+  ])
+])
