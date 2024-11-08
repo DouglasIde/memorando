@@ -46,7 +46,7 @@ export const buttonStateTrigger = trigger('buttonState', [
 export const filterTrigger = trigger('filterAnimation',[
   transition(':enter',[
     style({opacity: 0, width: 0}),
-    animate('400ms ease-out', keyframes([
+    animate('400ms cubic-bezier(.13,.9,.8,.1)', keyframes([
       style({opacity: 0, width: 0, offset: 0}),
       style({opacity: 0.5, width: '*', backgroundColor: 'lightgreen', offset: 0.5}),
       style({opacity: 1, width: '*', backgroundColor: 'lightblue', offset: 1})
