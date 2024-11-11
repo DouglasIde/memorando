@@ -96,16 +96,16 @@ export const flyInOutTrigger = trigger('flyInOut', [
       width: '100%',
       transform: 'translateX(-100%)',
       opacity: 0,
-      marginLeft: '-300'
+      marginLeft: '-300px'
     }),
     group([
       animate('0.3s 0.1s ease', style({
-        transform: 'translateX(0)',
+        transform: 'translateX(0%)',
         width: '*'
       })),
       animate('0.3s ease', style({
         opacity: 1,
-        marginLeft: 0
+        marginLeft: '0px'
       }))
     ]),
     transition(':leave', [
@@ -126,16 +126,16 @@ export const shakeTrigger = trigger('shakeAnimation', [
   transition('* => *', [
     query('input.ng-invalid:focus, select.ng-invalid:focus', [
       animate('0.5s', keyframes([
-        style({ border: '2px solid red'}),
-        style({ transform: 'translateX(-10px)'}),
-        style({ transform: 'translateX(10px)'}),
-        style({ transform: 'translateX(-10px)'}),
-        style({ transform: 'translateX(10px)'}),
-        style({ transform: 'translateX(-10px)'}),
-        style({ transform: 'translateX(10px)'}),
-        style({ transform: 'translateX(-10px)'}),
-        style({ transform: 'translateX(0px)'})
+        style({ border: '2px solid red' }),
+        style({ transform: 'translateX(-10px)' }),
+        style({ transform: 'translateX(10px)' }),
+        style({ transform: 'translateX(-10px)' }),
+        style({ transform: 'translateX(10px)' }),
+        style({ transform: 'translateX(-10px)' }),
+        style({ transform: 'translateX(10px)' }),
+        style({ transform: 'translateX(-10px)' }),
+        style({ transform: 'translateX(0px)' })
       ]))
-    ])
+    ], {optional: true})
   ])
-])
+]);
