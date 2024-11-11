@@ -4,7 +4,11 @@
       Criar nova tarefa
     </button>
   </div>
-  <form [@shownState]="formAberto ? 'shown' : 'void'" class="formulario ff-prompt"
+  <form 
+    @shownState 
+    [@shakeAnimation]="formulario.value ? 'shake' : 'none'"
+    [@formButton]="formulario.valid ? 'valid' : 'invalid'"
+    class="formulario ff-prompt"
     [formGroup]="formulario"
     *ngIf="formAberto">
     <label for="descricao">Descrição da tarefa</label>
@@ -23,7 +27,7 @@
       formControlName="prioridade"
       [ngClass]="campoValidado('prioridade')"
     >
-      <option disabled value="">Selecione</option>
+      <option value="">Selecione</option>
       <option value="Alta">Alta</option>
       <option value="Normal">Normal</option>
       <option value="Baixa">Baixa</option>
@@ -37,7 +41,7 @@
       formControlName="categoria"
       [ngClass]="campoValidado('categoria')"
     >
-      <option disabled value="">Selecione</option>
+      <option value="">Selecione</option>
       <option value="Casa">Casa</option>
       <option value="Trabalho">Trabalho</option>
       <option value="Estudos">Estudos</option>
@@ -48,7 +52,6 @@
     </app-mensagem>
     <div class="botoes-form">
       <button
-        [@formButton]="formulario.valid ? 'valid' : 'invalid'"
         (click)="salvarTarefa()"
         class="botao-form"
         [ngClass]="habilitarBotao()"
