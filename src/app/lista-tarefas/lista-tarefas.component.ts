@@ -46,7 +46,8 @@ export class ListaTarefasComponent implements OnInit {
   ) {}
 
   ngOnInit(): Tarefa[] {
-    this.service.listar(this.categoria).subscribe((listaTarefas) => {
+    this.service.listar();
+    this.service.tarefasSubject.subscribe((listaTarefas: Tarefa[]) => {
       this.listaTarefas = listaTarefas;
       this.tarefasFiltradas = listaTarefas;
     });
@@ -141,7 +142,8 @@ export class ListaTarefasComponent implements OnInit {
   }
 
   listarAposCheck() {
-    this.service.listar(this.categoria).subscribe((listaTarefas) => {
+    this.service.listar();
+    this.service.tarefasSubject.subscribe((listaTarefas: Tarefa[]) => {
       this.tarefasFiltradas = listaTarefas;
     });
   }
