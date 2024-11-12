@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { TarefaService } from 'src/app/service/tarefa.service';
 import { Tarefa } from '../interface/tarefa';
-import { buttonStateTrigger, filterTrigger, flyInOutTrigger, formButtonTrigger, highlightedStateTrigger, shakeTrigger, shownStateTrigger } from '../animations';
+import { buttonStateTrigger, filterTrigger, flyInOutTrigger, formButtonTrigger, highlightedStateTrigger, listStateTrigger, shakeTrigger, shownStateTrigger } from '../animations';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -16,7 +16,8 @@ import { Subscription } from 'rxjs';
     filterTrigger,
     formButtonTrigger,
     flyInOutTrigger,
-    shakeTrigger
+    shakeTrigger,
+    listStateTrigger
   ]
 })
 
@@ -30,6 +31,7 @@ export class ListaTarefasComponent implements OnInit {
   campoBusca: string = '';
   tarefasFiltradas: Tarefa[] = [];
   tarefasSubscription: Subscription = new Subscription();
+  estadoButton: string = 'unchecked';
 
 
   formulario: FormGroup = this.fomBuilder.group({
@@ -119,6 +121,12 @@ export class ListaTarefasComponent implements OnInit {
   finalizarTarefa(tarefa: Tarefa) {
     this.id = tarefa.id;
     this.service.atualizarStatusTarefa(tarefa);
+
+    if(tarefa.statusFinalizado == true){
+      this.estadoButton = 'checked';
+    } else {
+      this.estadoButton = 'unchecked';
+    }
   }
 
   habilitarBotao(): string {
