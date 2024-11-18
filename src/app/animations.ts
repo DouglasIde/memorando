@@ -106,7 +106,7 @@ export const formButtonTrigger = trigger('formButton', [
     animate(200, style({
       transform: 'scale(1)'
     }))
-  ]),
+  ], { optional: true }),
   ])
 ])
 
@@ -143,7 +143,7 @@ export const flyInOutTrigger = trigger('flyInOut', [
 ])
 
 export const shakeTrigger = trigger('shakeAnimation', [
-  transition('* => *', [
+  transition('* => shake', [
     query('input.ng-invalid:focus, select.ng-invalid:focus', [
       animate('0.5s', keyframes([
         style({ border: '2px solid red' }),
