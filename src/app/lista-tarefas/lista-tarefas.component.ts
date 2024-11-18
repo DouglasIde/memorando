@@ -115,7 +115,14 @@ export class ListaTarefasComponent implements OnInit {
   }
 
   carregarParaEditar(id: number) {
-    this.service.buscarPorId(id)
+    this.service.buscarPorId(id).subscribe((tarefa: Tarefa) => {
+      this.formulario = this.fomBuilder.group({
+        id: [tarefa.id],
+        descricao: [tarefa.descricao],
+        statusFinalizado: [tarefa.statusFinalizado],
+        prioridade: [tarefa.prioridade]
+      });
+    });
     this.formAberto = true;
   }
 

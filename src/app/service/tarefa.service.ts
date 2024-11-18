@@ -59,9 +59,9 @@ export class TarefaService {
     });
   }
 
-  buscarPorId(id: number): void {
+  buscarPorId(id: number): Observable<Tarefa> {
     const url = `${this.API}/${id}`;
-    this.http.get<Tarefa>(url);
+    return this.http.get<Tarefa>(url);
   }
 
   atualizarStatusTarefa(tarefa: Tarefa): void{
