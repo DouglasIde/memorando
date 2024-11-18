@@ -91,7 +91,7 @@ export const formButtonTrigger = trigger('formButton', [
       animate(200, style({
         transform: 'scale(1)'
       }))
-    ]),
+    ], { optional: true }),
   ]),
   transition('valid => invalid', [
     query('#botao-salvar', [
@@ -146,15 +146,16 @@ export const shakeTrigger = trigger('shakeAnimation', [
   transition('* => shake', [
     query('input.ng-invalid:focus, select.ng-invalid:focus', [
       animate('0.5s', keyframes([
-        style({ border: '2px solid red' }),
-        style({ transform: 'translateX(-10px)' }),
-        style({ transform: 'translateX(10px)' }),
-        style({ transform: 'translateX(-10px)' }),
-        style({ transform: 'translateX(10px)' }),
-        style({ transform: 'translateX(-10px)' }),
-        style({ transform: 'translateX(10px)' }),
-        style({ transform: 'translateX(-10px)' }),
-        style({ transform: 'translateX(0px)' })
+        style({ border: '2px solid red', offset: 0 }),
+        style({ transform: 'translateX(-10px)', offset: 0.1 }),
+        style({ transform: 'translateX(10px)', offset: 0.2 }),
+        style({ transform: 'translateX(-10px)', offset: 0.3 }),
+        style({ transform: 'translateX(10px)', offset: 0.4 }),
+        style({ transform: 'translateX(-10px)', offset: 0.5 }),
+        style({ transform: 'translateX(10px)', offset: 0.6 }),
+        style({ transform: 'translateX(-10px)', offset: 0.7 }),
+        style({ transform: 'translateX(10px)', offset: 0.8 }),
+        style({ transform: 'translateX(0px)', offset: 0.9 })
       ]))
     ], {optional: true})
   ])

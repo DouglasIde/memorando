@@ -39,7 +39,8 @@
       "id": 7,
       "descricao": "Salve Wilker",
       "statusFinalizado": false,
-      "prioridade": "Normal"
+      "categoria": "Casa",
+      "prioridade": "Alta"
     }
   ]
 }
