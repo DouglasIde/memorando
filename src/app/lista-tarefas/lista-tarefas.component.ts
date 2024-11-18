@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { TarefaService } from 'src/app/service/tarefa.service';
 import { Tarefa } from '../interface/tarefa';
-import { buttonStateTrigger, filterTrigger, flyInOutTrigger, formButtonTrigger, highlightedStateTrigger, listStateTrigger, shakeTrigger, shownStateTrigger } from '../animations';
+import { buttonStateTrigger, checkButtonTrigger, filterTrigger, flyInOutTrigger, formButtonTrigger, highlightedStateTrigger, listStateTrigger, shakeTrigger, shownStateTrigger } from '../animations';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -17,7 +17,8 @@ import { Subscription } from 'rxjs';
     formButtonTrigger,
     flyInOutTrigger,
     shakeTrigger,
-    listStateTrigger
+    listStateTrigger,
+    checkButtonTrigger
   ]
 })
 
