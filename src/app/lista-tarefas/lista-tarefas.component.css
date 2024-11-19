@@ -330,18 +330,18 @@ select:focus, input:focus {
   margin-top: 16px;
   border-radius: 8px;
   font-size: 16px;
-  display: inline-block; /*ALTERADO "FLEX"*/
+  display: flex;
   align-items: center;
   height: 40px;
   font-family: 'Prompt';
   color: #263238;
-  padding: 5px 10px; /*ALTERADO*/
   padding-right: 8px;
   padding-left: 8px;
+  justify-content: center;
 }
 
 .categoria-tarefa img {
-  padding-right: 8px;
+  padding-right: 10px;
 }
 
 .info-card {
@@ -352,6 +352,7 @@ select:focus, input:focus {
     "descricao";
   margin-left: 8px;
   box-sizing: border-box;
+  border-radius: 8px;
 }
 
 .icone-unchecked{

@@ -83,7 +83,7 @@
 
   <section class="lista-tarefas" *ngIf="listaTarefas.length > 0; else semTarefas">
     <div @filterAnimation 
-        *ngFor="let tarefa of listaTarefas; let i = index"
+        *ngFor="let tarefa of tarefasFiltradas; let i = index"
          (mouseover)="indexTarefa = i"
          [@highlightedState]="indexTarefa === i ? 'highlighted' : 'default'">
       <div class="info-card">
