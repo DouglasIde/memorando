@@ -81,7 +81,7 @@
     >
   </div>
 
-  <section class="lista-tarefas" *ngIf="listaTarefas.length > 0; else semTarefas">
+  <section class="lista-tarefas" *ngIf="tarefasFiltradas.length > 0; else semTarefas">
     <div @filterAnimation 
         *ngFor="let tarefa of tarefasFiltradas; let i = index"
          (mouseover)="indexTarefa = i"
@@ -103,7 +103,7 @@
                   [@shakeAnimation]="tarefa.id === id ? 'shake' : 'none'">
           </button>
         </p>
-        <div class="conteudo acoes">
+        <div class="conteudo">
             <p
             class="card-descricao ff-prompt card-{{ tarefa.statusFinalizado ? 'Feito' : '' }}"
             style="white-space: nowrap;">

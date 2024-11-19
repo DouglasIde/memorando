@@ -115,7 +115,7 @@ export class ListaTarefasComponent implements OnInit {
   }
 
   carregarParaEditar(id: number) {
-    this.service.buscarPorId(id).subscribe((tarefa: Tarefa) => {
+    this.service.buscarPorId(id!).subscribe((tarefa: Tarefa) => {
       this.formulario.patchValue({
         id: tarefa.id,
         descricao: tarefa.descricao,
