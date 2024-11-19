@@ -140,6 +140,12 @@ button {
   line-height: 24px;
 }
 
+.botao-criar button:hover {
+  background-color: #fff;
+  color: #263238;
+  border: 1px solid #263238;
+}
+
 .botoes-form {
   display: flex;
   flex-direction:row;
