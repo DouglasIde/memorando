@@ -18,7 +18,7 @@
       "id": 4,
       "descricao": "Preencher formulário de inscrição",
       "categoria": "Estudos",
-      "statusFinalizado": false,
+      "statusFinalizado": true,
       "prioridade": "Normal"
     },
     {
@@ -38,8 +38,15 @@
     {
       "id": 7,
       "descricao": "Salve Wilker",
-      "statusFinalizado": false,
+      "statusFinalizado": true,
       "categoria": "Casa",
+      "prioridade": "Alta"
+    },
+    {
+      "id": 8,
+      "descricao": "teste",
+      "statusFinalizado": false,
+      "categoria": "Trabalho",
       "prioridade": "Alta"
     }
   ]

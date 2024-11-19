@@ -80,8 +80,10 @@
     [(ngModel)]="campoBusca" (keyup)="filtrarTarefasPorDescricao(campoBusca)"
     >
   </div>
-  <section *ngIf="listaTarefas.length > 0; else semTarefas">
-    <div *ngFor="let tarefa of listaTarefas; let i = index"
+
+  <section class="lista-tarefas" *ngIf="listaTarefas.length > 0; else semTarefas">
+    <div @filterAnimation 
+        *ngFor="let tarefa of listaTarefas; let i = index"
          (mouseover)="indexTarefa = i"
          [@highlightedState]="indexTarefa === i ? 'highlighted' : 'default'">
       <div class="info-card">
@@ -101,7 +103,12 @@
                   [@shakeAnimation]="tarefa.id === id ? 'shake' : 'none'">
           </button>
         </p>
-        <div class="acoes">
+        <div class="conteudo acoes">
+            <p
+            class="card-descricao ff-prompt card-{{ tarefa.statusFinalizado ? 'Feito' : '' }}"
+            style="white-space: nowrap;">
+            {{ tarefa.descricao }}
+          </p>
           <button (click)="carregarParaEditar(tarefa.id)">
             <img src="assets/icones/icone-editar.png" alt="Ícone de editar">
           </button>
